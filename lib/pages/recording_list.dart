@@ -59,7 +59,7 @@ class _RecordingListState extends State<RecordingList> {
             const Icon(Icons.arrow_back_ios, color: AppColors.recorderWhite),
         title: Text(
           'All Recordings',
-          style: Styles.appTextStyle1,
+          style: Styles.appTextStyle3,
         ),
       ),
       body: ListView.builder(
