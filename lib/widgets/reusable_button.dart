@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recorder/core/colors.dart';
 
 class ReusableCircleButton extends StatefulWidget {
   final Widget iconWidget;
@@ -18,9 +19,9 @@ class _ReusableCircleButtonState extends State<ReusableCircleButton> {
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 2),
+            border: Border.all(color: AppColors.recorderWhite, width: 2),
             borderRadius: BorderRadius.circular(100),
-            color: Colors.black),
+            color: AppColors.recordBlack),
         child: widget.iconWidget,
       ),
     );

@@ -60,7 +60,7 @@ class AudioVisualizer extends StatelessWidget {
         width: 2,
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 2),
-          color: AppColors.mainColor,
+          color: AppColors.recordGrey,
           borderRadius: BorderRadius.circular(5),
           boxShadow: const [
             BoxShadow(
@@ -69,7 +69,7 @@ class AudioVisualizer extends StatelessWidget {
               offset: Offset(1, 1),
             ),
             BoxShadow(
-              color: AppColors.whiteColor,
+              color: AppColors.recorderWhite,
               spreadRadius: 1,
               offset: Offset(-1, -1),
             ),

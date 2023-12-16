@@ -13,4 +13,5 @@ abstract class RecorderConstants {
   static const String ok = 'Ok';
   static const String successTitle = 'Success';
   static const String recordDeletedSuccess = 'Record deleted successfully.';
+  static const String fontName = 'Basier Circle';
 }

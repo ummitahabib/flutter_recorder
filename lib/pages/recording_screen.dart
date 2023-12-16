@@ -2,8 +2,11 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_recorder/core/colors.dart';
 import 'package:flutter_recorder/core/constants.dart';
 import 'package:flutter_recorder/core/services.dart';
+import 'package:flutter_recorder/core/size_constants.dart';
+import 'package:flutter_recorder/core/styles.dart';
 import 'package:flutter_recorder/pages/audio_visualizer.dart';
 import 'package:flutter_recorder/pages/recording_list.dart';
 import 'package:flutter_recorder/widgets/reusable_button.dart';
@@ -218,27 +221,31 @@ class _RecordingScreenState extends State<RecordingScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const SizedBox(
-              height: 70,
+              height: SizeConstants.double70,
             ),
             Container(
-              child: const Text(
+              child: Text(
                 'Voice Recorder',
-                style: TextStyle(color: Colors.white, fontSize: 30),
+                style: Styles.appTextStyle1,
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: SizeConstants.double40,
             ),
             Container(
               child: Center(
                 child: Text(
                   _timerText,
-                  style: const TextStyle(fontSize: 40, color: Colors.white),
+                  style: Styles.appTextStyle2,
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 60, right: 20, top: 80),
+              padding: const EdgeInsets.only(
+                left: SizeConstants.double60,
+                right: SizeConstants.double20,
+                top: SizeConstants.double80,
+              ),
               child: _showVisualizer
                   ? StreamBuilder<double>(
                       stream: amplitudeStream,
@@ -250,7 +257,7 @@ class _RecordingScreenState extends State<RecordingScreen> {
                   : const SizedBox(),
             ),
             const SizedBox(
-              height: 20,
+              height: SizeConstants.double20,
             ),
           ],
         ),
@@ -263,23 +270,25 @@ class _RecordingScreenState extends State<RecordingScreen> {
     return Container(
         width: MediaQuery.of(context).size.width,
         height: 100,
-        decoration: const BoxDecoration(color: Colors.black),
+        decoration: const BoxDecoration(color: AppColors.recordBlack),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             ReusableCircleButton(
               iconWidget: const Icon(
                 Icons.delete,
-                color: Colors.white,
-                size: 15,
+                color: AppColors.recorderWhite,
+                size: SizeConstants.double15,
               ),
               onTap: deleteAudio,
             ),
             ReusableCircleButton(
               iconWidget: Icon(
                 _isRecording ? Icons.stop : Icons.mic,
-                color: _isRecording ? Colors.white : Colors.red,
-                size: 24.0,
+                color: _isRecording
+                    ? AppColors.recorderWhite
+                    : AppColors.recordRed,
+                size: SizeConstants.double24,
               ),
               onTap: () {
                 if (_isRecording) {
@@ -310,8 +319,8 @@ class _RecordingScreenState extends State<RecordingScreen> {
               },
               iconWidget: const Icon(
                 Icons.save,
-                color: Colors.white,
-                size: 15,
+                color: AppColors.recorderWhite,
+                size: SizeConstants.double15,
               ),
             )
           ],
